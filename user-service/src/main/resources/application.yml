@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+
+spring:
+  cloud:
+    discovery:
+      enabled: true
+    zookeeper:
+      connect-string: 192.168.0.111:32643
+      discovery:
+        enabled: true
+        root: /services
+  application:
+    name: order-service.svc.zk
