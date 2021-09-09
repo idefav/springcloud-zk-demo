@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   cloud:
@@ -12,4 +12,4 @@ spring:
         root: /services
 
   application:
-    name: user-service.svc.zk
+    name: order-service
