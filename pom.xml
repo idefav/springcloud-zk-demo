@@ -15,7 +15,7 @@
     </parent>
     <groupId>com.idefav</groupId>
     <artifactId>springcloud-zk-demo</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
     <name>springcloud-zk-demo</name>
     <description>springcloud-zk-demo</description>
     <properties>
