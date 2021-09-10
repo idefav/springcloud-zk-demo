@@ -10,7 +10,8 @@ spring:
       discovery:
         enabled: true
         root: /services
-        instance-host: ${spring.application.instance_id}
-
+        instance-host:  ${spring.cloud.client.ip-address}
   application:
     name: order-service
+user-service:
+  host: user-service.default.svc.zk

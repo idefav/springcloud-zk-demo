@@ -11,6 +11,6 @@ spring:
       discovery:
         enabled: true
         root: /services
-        instance-host: ${spring.application.instance_id}
+        instance-host: ${spring.cloud.client.ip-address}
   application:
     name: user-service

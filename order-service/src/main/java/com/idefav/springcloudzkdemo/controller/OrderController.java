@@ -1,6 +1,7 @@
 package com.idefav.springcloudzkdemo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -21,19 +22,22 @@ public class OrderController {
 
     @Bean
 //    @LoadBalanced
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate();
     }
 
     @Autowired
     private ServiceInstance serviceInstance;
 
+    @Value("${user-service.host}")
+    private String userServiceHost;
+
     @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping("/info/{orderId}")
-    public String orderInfo(@PathVariable("orderId") Long orderId){
-        String result = restTemplate.getForObject("http://user-service.svc.zk:18081/user/info/idefav", String.class);
-        return String.format("orderId: %s, userInfo: %s", orderId,result);
+    public String orderInfo(@PathVariable("orderId") Long orderId) {
+        String result = restTemplate.getForObject(String.format("http://%s/user/info/idefav", userServiceHost), String.class);
+        return String.format("orderId: %s, userInfo: %s", orderId, result);
     }
 }
