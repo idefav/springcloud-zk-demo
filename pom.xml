@@ -22,6 +22,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <hub>registry.cn-hangzhou.aliyuncs.com/idefav</hub>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -34,5 +35,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>
