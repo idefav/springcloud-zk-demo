@@ -10,6 +10,7 @@ spring:
       discovery:
         enabled: true
         root: /services
+        instance-host: ${spring.application.instance_id}
 
   application:
     name: order-service
