@@ -4,10 +4,14 @@ server:
 
 spring:
   cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      eager: true
     discovery:
       enabled: true
     zookeeper:
-      connect-string: 192.168.0.111:32643
+      connect-string: 192.168.0.105:2181
       discovery:
         enabled: true
         root: /services
